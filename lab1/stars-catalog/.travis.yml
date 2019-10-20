@@ -1,5 +1,7 @@
 language: java
-before_script: cd stars-catalog
-before_install: cd stars-catalog
+before_script: cd <stars_catalog>
+script:
+  - sbt compile
+  - sbt test
 sudo: false
 script: mvn clean verify
