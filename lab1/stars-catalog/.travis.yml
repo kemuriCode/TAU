@@ -1,3 +1,4 @@
 language: java
+before_script: cd lab1/stars-catalog/
 sudo: false
 script: mvn clean verify
