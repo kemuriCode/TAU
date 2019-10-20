@@ -1,7 +1,4 @@
 language: java
-before_script: cd <stars_catalog>
-script:
-  - sbt compile
-  - sbt test
+solution: "./TAU/lab1/stars-catalog/"
 sudo: false
 script: mvn clean verify
