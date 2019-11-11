@@ -5,6 +5,7 @@ import pl.dymek.tau.starscatalog.service.exceptions.ObjectDoesNotExistException;
 import pl.dymek.tau.starscatalog.service.exceptions.ObjectAlreadyExistException;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DatabaseManager {
@@ -13,6 +14,16 @@ public class DatabaseManager {
     public DatabaseManager() {
         this.collection = new ArrayList<Model>();
     }
+
+    public enum Datetime {
+        CREATED_AT(true), UPDATED_AT(true), READED_AT(true);
+        boolean isEnabled;
+
+        Datetime(boolean b) {
+            isEnabled = b;
+        }
+    }
+
 
     public void create(Model model) throws ObjectAlreadyExistException {
         if (this.collection != null && !this.collection.isEmpty()) {
