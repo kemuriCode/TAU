@@ -26,14 +26,14 @@ public class RedGigantStar extends BaseModel implements Model {
         return this.name;
     }
 
-    public void addFriendToFriendList(int id) throws Exception {
+    public void addPlanetToPlanetList(int id) throws Exception {
         if (this.starsList.contains(id)) {
-            throw new Exception("You have already this star in catalog");
+            throw new Exception("You have already this planet into your star");
         }
         this.starsList.add(id);
     }
 
-    public List<Integer> getStarList() {
+    public List<Integer> getPlanetList() {
         return this.starsList;
     }
 }

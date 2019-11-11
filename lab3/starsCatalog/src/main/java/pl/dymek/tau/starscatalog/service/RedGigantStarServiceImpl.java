@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class RedGigantStarServiceImpl implements RedGigantStarService {
     private DatabaseManager databaseManager;
 
-    RedGigantStarServiceImpl(DatabaseManager databaseManager) {
+    public RedGigantStarServiceImpl(DatabaseManager databaseManager) {
         this.databaseManager = databaseManager;
     }
 

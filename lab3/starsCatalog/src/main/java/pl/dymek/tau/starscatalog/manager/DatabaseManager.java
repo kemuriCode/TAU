@@ -24,7 +24,6 @@ public class DatabaseManager {
         }
     }
 
-
     public void create(Model model) throws ObjectAlreadyExistException {
         if (this.collection != null && !this.collection.isEmpty()) {
             for (Model element : this.collection) {
@@ -32,6 +31,10 @@ public class DatabaseManager {
                     throw new ObjectAlreadyExistException();
                 }
             }
+        }
+        if (Datetime.CREATED_AT.isEnabled) {
+            Date date = new Date();
+            model.setCreatedAt(date.getTime());
         }
         this.collection.add(model);
     }
@@ -41,6 +44,11 @@ public class DatabaseManager {
     }
 
     public Model read(int id) {
+        Model model = this.collection.get(id);
+        if (Datetime.READED_AT.isEnabled) {
+            Date date = new Date();
+            model.setReadedAt(date.getTime());
+        }
         return this.collection.get(id);
     }
 
@@ -50,6 +58,11 @@ public class DatabaseManager {
             this.collection.get(modelId);
         } catch ( IndexOutOfBoundsException e ) {
             throw new ObjectDoesNotExistException();
+        }
+
+        if (Datetime.UPDATED_AT.isEnabled) {
+            Date date = new Date();
+            model.setUpdatedAt(date.getTime());
         }
         this.collection.set(modelId, model);
     }
