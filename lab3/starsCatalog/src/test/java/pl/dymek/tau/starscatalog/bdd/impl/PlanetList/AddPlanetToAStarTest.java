@@ -1,4 +1,4 @@
-package pl.dymek.tau.starscatalog.bdd,impl.PlanetList;
+package pl.dymek.tau.starscatalog.pl.dymek.tau.starscatalog.bdd.impl.PlanetList;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;

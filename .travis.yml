@@ -1,4 +1,4 @@
 language: java
-solution: "./TAU/lab1/stars-catalog/"
+solution: "./TAU/lab1/starsCatalog/"
 sudo: false
 script: mvn clean verify
